@@ -1,0 +1,119 @@
+WEEK2 SOLUTIONS:--
+
+1) CREATE TABLE STUD:-
+	 create table stud
+   	 (
+ 	        id int primary key,
+	         name varchar(20)
+         );
+
+  - CREATE TABLE STUD_DETAILS3
+       
+	create table stud_details3
+   	 (
+		id int references stud(id),
+		city varchar(30),
+		mobileno int
+	);
+
+2) INSERT QUERY IN STUD:-
+
+------>	insert into stud
+	values(1,'om');
+	insert into stud
+	values(2,'sai');
+	insert into stud
+	values(3,'ram');
+	insert into stud 
+	values(4,'radha');
+	insert into stud 
+	values(5,'krishna');
+	insert into stud 
+	values(6,'gopal');
+	insert into stud
+	values(7,'krushna');
+	insert into stud 
+	values(8,'gopi');
+	insert into stud 
+	values(9,'shakhi');
+	insert into stud 
+	values(10,'shivji');
+
+  INSERT QUERY IN STUD DETAILS3:-
+
+------>	insert into stud_details3
+ 	values(1,'surat',1234567890);
+	insert into stud_details3 
+	values(2,'vadodra',1234567800);
+	insert into stud_details3 
+	values(3,'bardoli',1234533800);
+	insert into stud_details3 
+	values(4,'vyara',1244533800);
+	insert into stud_details3 
+	values(5,'anand',124466800);
+	insert into stud_details3
+	values(6,'delhi',122226800);
+	insert into stud_details3 
+	values(7,'bombay',122226800);
+	insert into stud_details3 
+	values(8,'bharuch',122229900);
+	insert into stud_details3 
+	values(9,'punha',1227787900);
+	insert into stud_details3
+ 	values(10,'kutch',1227787900);
+
+
+
+0) SELECT QUERY IN STUD:-
+
+------>	select*from stud;
+	1|om
+	2|sai
+	3|ram
+	4|radha
+	5|krishna
+	6|gopal
+	7|krushna
+	8|gopi
+	9|shakhi
+	10|shivji
+
+0)SELECT QUERY IN STUD_DETAILS3:-
+
+------>	 select*from stud_details3;
+
+	1|surat|1234567890
+	2|vadodra|1234567800
+	3|bardoli|1234533800
+	4|vyara|1244533800
+	5|anand|124466800
+	6|delhi|122226800
+	7|bombay|122226800
+	8|bharuch|122229900
+	9|punha|1227787900
+	10|kutch|1227787900
+
+
+3)Display whoes student come from surat city .
+	
+------>	 select*from stud_details3
+         where city='surat';
+
+  1|surat|1234567890
+
+4)Display student details whoes city satrt with 'B'.
+
+------> select * from stud_details3
+	where city LIKE 'b%';
+
+	3|bardoli|1234533800
+	7|bombay|1222268000
+	8|bharuch|122229900
+5)Update mobileno who are comming from 'surat'.
+
+------> update stud_details3
+	set mobileno='1234567890'
+	where city='surat';
+
+	1|surat|1234567890
+
