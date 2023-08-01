@@ -1,0 +1,117 @@
+WEEK3
+#write a python script to perform CRUD operation on following table of "ESM.db"database.
+
+import sqlite3
+
+con=sqlite3.connect("ESM.db")
+Q="create table IF NOT EXIST EMP
+	(
+		eid int primary key,
+		name text,
+		dept varchar(20),
+		basic int,
+		branch text
+	)"
+c=con.cursor()
+c.execute(q)
+con.commit()
+
+#insert query
+q1="insert into emp values(?,?,?,?,?)"
+l=[]
+for i in range(5)
+	e=int(input("enter emp id:"))
+	name=input("enter emp name:")
+        dept=input("enter the dept:")
+	basic=int(input("Enetr emp basic:"))
+	branch=input(enter emp branch:")
+	t=(e,name,dept,basuc,branch)
+	l.append(t)
+c.executemany(q1,i)
+
+#insert to user
+    q2=insert into emp values
+	(101,'om','bca',7000,'surat')
+	(102,'sai','it',8000,'bombay')
+	(103,'ram','HR',10000,'bardoli')
+	(104,'radha','Account',17000,'kamrej')
+	(105,'gopal','inventory',16000','vadodra')
+c.execute(q2)
+con.commit()
+
+#insert into tuple
+
+tuple=[(101,'om','bca',7000,'surat')
+	(102,'sai','it',8000,'bombay')
+	(103,'ram','HR',10000,'bardoli')
+	(104,'radha','Account',17000,'kamrej')
+	(105,'gopal','inventory',16000','vadodra')]
+c.executemany(q1,tuple)
+con.commite()
+
+#3 update records who are from surat branch with increment in salarty 10%.
+
+q3="update employee set basic=basic+(basic*10)/100where branch='surat'"
+c.execute(q3)
+con.commit()
+
+#4 print all records
+
+q4="select*from emp"
+c.execute(q4)
+
+print(\n\t\tOUTPUT:")
+print(c,fetchall())
+con.commit()
+
+#5 print records where dept is'Hr'and 'IT'.
+
+q5="select*from emp 
+    where dept='HR' OR dept='IT'"
+c.execute(q5)
+con.commit()
+
+
+#6 print records in sorting order of department.
+
+q6="select*from emp order by dept"
+c.execute(q6)
+con.commit()
+
+#7 print records where basic is>6000.
+
+q7="select*from emp
+    where basic>6000"
+c.execute(q7)
+con.commit()
+
+#8 print records where emp name second character is "r".
+
+q8="select*from emp 
+    where name LIKE '_r%'"
+c.execute(q8)
+con.commit()
+
+#9 grouping records of emp who are from account group by dept having dept in('inventory','account')
+
+q9="select dept,count(*)from emp
+    group by dept having dept in('inventory','account')"
+c.execute(q9)
+con.commit()
+
+
+#10 print all records based on branch name in decending order.
+
+q10="select*from emp order by
+     order by desc"
+c.execute(q9)
+con.commit()
+con.close()
+
+ 
+
+ 
+
+
+
+
